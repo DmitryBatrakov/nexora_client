@@ -16,8 +16,8 @@ export function Hero() {
             </div>
             <div className="pointer-events-none absolute inset-0 flex justify-center">
                 <div className="relative w-full max-w-7xl mx-auto">
-                    <div className="hidden md:block absolute top-1/4 -left-25 h-48 w-96 -rotate-12 rounded-3xl border border-white/5 bg-white/5 backdrop-blur-md z-10" />
-                    <div className="hidden md:block absolute bottom-1/4 -right-10 h-32 w-80 rotate-6 rounded-3xl border border-white/5 bg-white/5 backdrop-blur-md z-10" />
+                    <div className="absolute top-1/5 md:top-1/4 left-5 md:-left-25 h-24 md:h-48  w-40 md:w-96 -rotate-12 rounded-3xl border border-white/5 bg-white/5 backdrop-blur-md z-10" />
+                    <div className="absolute bottom-60 right-5 md:-right-10 w-40 h-18 md:h-32 md:w-80 rotate-6 rounded-3xl border border-white/5 bg-white/5 backdrop-blur-md z-10" />
                 </div>
             </div>
 
