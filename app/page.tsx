@@ -28,9 +28,6 @@ export default function Home() {
                     SPLAT_FORCE={4000}
                     DENSITY_DISSIPATION={3}
                     VELOCITY_DISSIPATION={2}
-                    // DENSITY_DISSIPATION={5}
-                    // VELOCITY_DISSIPATION={2}
-                    // CURL={10}
                     SIM_RESOLUTION={64}
                     DYE_RESOLUTION={512}
                 />
