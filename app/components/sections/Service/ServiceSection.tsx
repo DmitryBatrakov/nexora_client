@@ -26,7 +26,7 @@ const data: Record<string, ServiceCard> = {
             "High-conversion landing pages with clean structure, modern visuals and smooth animations.",
         buttonText: "View",
         image: firstCard,
-        link: "/",
+        link: "#pricing",
     },
     secondCard: {
         title: "Business Websites & Corporate Platforms",
@@ -34,7 +34,7 @@ const data: Record<string, ServiceCard> = {
             "Multi-page business websites with strong UX, SEO-ready structure and professional presentation.",
         buttonText: "View",
         image: secondCard,
-        link: "/",
+        link: "#pricing",
     },
     thirdCard: {
         title: "E-commerce & Web Applications",
@@ -42,7 +42,7 @@ const data: Record<string, ServiceCard> = {
             "Online stores, booking systems and custom web apps built for performance and easy scalability.",
         buttonText: "View",
         image: thirdCard,
-        link: "/",
+        link: "#pricing",
     },
 };
 

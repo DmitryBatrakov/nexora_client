@@ -27,7 +27,7 @@ export function AboutUs() {
                         </span>
                     </div>
                 </FadeContent>
-                <div className="px-4 sm:px-7 py-4 grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-2 md:gap-6 justify-between w-full backdrop-blur-xl rounded-2xl">
+                <div className="px-4 sm:px-7 py-4 grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-8 md:gap-6 justify-between w-full backdrop-blur-xl rounded-2xl">
                     <FadeContent
                         blur={true}
                         duration={1}
