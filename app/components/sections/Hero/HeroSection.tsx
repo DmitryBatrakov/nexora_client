@@ -1,5 +1,3 @@
-"use client";
-
 import DecryptedText from "@/app/components/ui/DecryptedText/DecryptedText";
 import GradientText from "@/app/components/ui/GradientText/GradientText";
 import { BlueLightPoint } from "../../ui/BlueLightPoint/BlueLightPoint";

@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import { PinkLightPoint } from "../../ui/PinkLightPoint/PinkLightPoint";
-import landingImg from "../../../assets/landing.png";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import Link from "next/link";
 import type { StaticImageData } from "next/image";

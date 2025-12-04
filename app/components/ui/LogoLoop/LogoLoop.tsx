@@ -1,3 +1,5 @@
+"use client";
+
 import LogoLoop from "@/components/ui/LogoLoop";
 import {
     SiReact,
@@ -44,7 +46,6 @@ export function LogoLoopSection() {
     return (
         <div
             style={{
-               
                 position: "relative",
                 overflow: "hidden",
             }}
@@ -59,7 +60,6 @@ export function LogoLoopSection() {
                 hoverSpeed={10}
                 scaleOnHover
                 ariaLabel="Technology partners"
-                
             />
 
             {/* Vertical loop with deceleration on hover */}

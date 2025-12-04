@@ -1,5 +1,3 @@
-"use client";
-
 import { MdDoneAll } from "react-icons/md";
 import { PinkLightPoint } from "../../ui/PinkLightPoint/PinkLightPoint";
 import AnimatedContent from "@/components/ui/AnimatedContent";
