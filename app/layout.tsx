@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -51,12 +51,17 @@ export const metadata: Metadata = {
     },
 
     manifest: "/manifest.json",
-    themeColor: "#020318",
+    
+
 
     other: {
         "apple-mobile-web-app-capable": "yes",
         "apple-mobile-web-app-status-bar-style": "black-translucent",
     },
+};
+
+export const viewport: Viewport = {
+    themeColor: "#020318",
 };
 
 export default function RootLayout({
