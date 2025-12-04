@@ -29,7 +29,7 @@ export function ContactSection() {
                     direction="horizontal"
                     reverse={true} // ← слева
                     distance={80}
-                    duration={0.7}
+                    duration={0.6}
                     ease="easeOut"
                     initialOpacity={0}
                     animateOpacity
@@ -45,7 +45,7 @@ export function ContactSection() {
                         direction="horizontal"
                         reverse={true} // ← слева
                         distance={80}
-                        duration={0.7}
+                        duration={0.6}
                         ease="easeOut"
                         initialOpacity={0}
                         animateOpacity

@@ -16,7 +16,7 @@ export function AboutUs() {
             <div className=" w-full max-w-6xl mx-auto">
                 <FadeContent
                     blur={true}
-                    duration={0.8} 
+                    duration={0.6} 
                     ease="easeOut" 
                     initialOpacity={0}
                     delay={0}
@@ -30,7 +30,7 @@ export function AboutUs() {
                 <div className="px-4 sm:px-7 py-1 grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-8 md:gap-6 justify-between w-full backdrop-blur-xl rounded-none md:rounded-2xl">
                     <FadeContent
                         blur={true}
-                        duration={0.8}
+                        duration={0.6}
                         ease="easeOut"
                         initialOpacity={0}
                         delay={0}
