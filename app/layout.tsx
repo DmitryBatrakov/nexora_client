@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
     subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
+    metadataBase: new URL("https://nexora-client-amber.vercel.app"),
     title: {
         default: "Nexora — Next-Level Web Development",
         template: "%s | Nexora",
