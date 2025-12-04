@@ -66,7 +66,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
                 </div>
 
                 <div
-                    className={`w-full overflow-hidden transition-all duration-400 ease-out
+                    className={`w-full overflow-hidden transition-all duration-600 
                         ${
                             open
                                 ? "max-h-60 opacity-100 mt-3"
