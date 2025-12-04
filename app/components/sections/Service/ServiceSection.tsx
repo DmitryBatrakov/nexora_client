@@ -60,8 +60,8 @@ export function ServiceSection() {
                     distance={40}
                     direction="vertical"
                     reverse={false}
-                    duration={0.8}
-                    ease=""
+                    duration={0.6}
+                    ease="easeOut"
                     initialOpacity={0}
                     animateOpacity
                     scale={1}
