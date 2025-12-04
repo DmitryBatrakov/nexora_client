@@ -47,7 +47,7 @@ export function Hero() {
                                         className="font-black"
                                         parentClassName="all-letters"
                                         encryptedClassName="encrypted"
-                                        animateOn="view"
+                                        animateOn="view"                                   
                                     />
                                 </GradientText>
                                 <span>for your business</span>
