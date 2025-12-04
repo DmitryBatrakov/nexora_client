@@ -46,7 +46,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
                 <div className="flex items-center justify-between gap-3 text-white">
                     <div className="flex gap-2 items-center justify-start">
                         <div className="size-5">
-                            <Logo />
+                            <Logo color="white"/>
                         </div>
                         <h2 className="text-[#F0F0F0] text-xl font-bold leading-tight tracking-tight">
                             Nexora
@@ -66,7 +66,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
                 </div>
 
                 <div
-                    className={`w-full overflow-hidden transition-all duration-400 ease-out 
+                    className={`w-full overflow-hidden transition-all duration-400 ease-out
                         ${
                             open
                                 ? "max-h-60 opacity-100 mt-3"
@@ -91,3 +91,4 @@ export function MobileMenu({ items }: MobileMenuProps) {
         </HeaderShell>
     );
 }
+

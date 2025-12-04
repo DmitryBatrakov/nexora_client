@@ -19,22 +19,27 @@ export function AboutUs() {
                     duration={1.1} // секунды
                     ease="easeOut" // если это framer-motion
                     initialOpacity={0}
-                    delay={0.6}
+                    delay={0}
                 >
-                    <div className="ml-5">
+                    <div className="hidden md:block ml-8">
                         <span className="uppercase text-sm text-[#F0F0F0]/70">
                             About us
                         </span>
                     </div>
                 </FadeContent>
-                <div className="px-4 sm:px-7 py-4 grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-8 md:gap-6 justify-between w-full backdrop-blur-xl rounded-2xl">
+                <div className="px-4 sm:px-7 py-1 grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-8 md:gap-6 justify-between w-full backdrop-blur-xl rounded-none md:rounded-2xl">
                     <FadeContent
                         blur={true}
                         duration={1}
                         ease="easeOut"
                         initialOpacity={0}
-                        delay={0.5}
+                        delay={0.1}
                     >
+                        <div className="-mb-3 md:hidden">
+                            <span className="uppercase text-sm text-[#F0F0F0]/70">
+                                About us
+                            </span>
+                        </div>
                         <div className=" flex flex-col justify-around gap-3 sm:gap-5 mt-5 order-2 md:order-1">
                             <h1 className="text-white text-5xl font-bold ">
                                 Driven by meaningful digital transformation

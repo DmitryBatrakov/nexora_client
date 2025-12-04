@@ -19,7 +19,7 @@ const navItems: NavItem[] = [
 
 export function Header() {
     return (
-        <header className="w-full  mx-auto px-4 md:px-10 py-5 z-10 ">
+        <header className="w-full  px-4 md:px-10 py-5 z-10 ">
             <div className="hidden md:block">
                 <DesktopNav items={navItems} />
             </div>

@@ -66,7 +66,7 @@ export function ServiceSection() {
                     animateOpacity
                     scale={1}
                     threshold={0.1}
-                    delay={0.1}
+                    delay={0}
                 >
                     <div className="text-left mb-2">
                         <span className="uppercase text-sm text-[#F0F0F0]/70">
