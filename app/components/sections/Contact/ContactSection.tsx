@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import { BlueLightPoint } from "../../ui/BlueLightPoint/BlueLightPoint";
 import { CustomInput } from "../../ui/Input/CustomInput";

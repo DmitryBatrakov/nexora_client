@@ -1,5 +1,3 @@
-"use client"
-
 type LogoProps = {
     color?: string;
     width?: string;

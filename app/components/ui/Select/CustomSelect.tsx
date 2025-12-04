@@ -1,5 +1,3 @@
-import * as React from "react";
-
 type Option = {
     label: string;
     value: string;
