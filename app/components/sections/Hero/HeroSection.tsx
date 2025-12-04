@@ -3,7 +3,6 @@ import GradientText from "@/app/components/ui/GradientText/GradientText";
 import { BlueLightPoint } from "../../ui/BlueLightPoint/BlueLightPoint";
 import { PinkLightPoint } from "../../ui/PinkLightPoint/PinkLightPoint";
 import { CustomButton } from "../../ui/Button/Button";
-import { LogoLoopSection } from "../../ui/LogoLoop/LogoLoop";
 
 export function Hero() {
     return (
@@ -58,7 +57,6 @@ export function Hero() {
                         </div>
                     </div>
                 </main>
-                <LogoLoopSection />
             </div>
         </section>
     );
