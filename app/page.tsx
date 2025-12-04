@@ -21,14 +21,16 @@ export default function Home() {
                     zIndex: 1,
                 }}
             >
-                <SplashCursor
-                    SPLAT_RADIUS={0.09}
-                    SPLAT_FORCE={4000}
-                    DENSITY_DISSIPATION={3}
-                    VELOCITY_DISSIPATION={2}
-                    SIM_RESOLUTION={64}
-                    DYE_RESOLUTION={512}
-                />
+                <div>
+                    <SplashCursor
+                        SPLAT_RADIUS={0.3}
+                        SPLAT_FORCE={3000}
+                        DENSITY_DISSIPATION={3}
+                        VELOCITY_DISSIPATION={2}
+                        SIM_RESOLUTION={64}
+                        DYE_RESOLUTION={512}
+                    />
+                </div>
             </div>
             <div className="fixed top-0 left-0 w-full z-50">
                 <Header />
