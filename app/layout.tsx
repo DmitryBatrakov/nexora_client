@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
     title: {
         default: "Nexora — Next-Level Web Development",
         template: "%s | Nexora",
@@ -51,8 +52,6 @@ export const metadata: Metadata = {
     },
 
     manifest: "/manifest.json",
-    
-
 
     other: {
         "apple-mobile-web-app-capable": "yes",
