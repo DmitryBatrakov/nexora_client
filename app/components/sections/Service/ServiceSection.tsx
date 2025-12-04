@@ -60,7 +60,7 @@ export function ServiceSection() {
                     distance={40}
                     direction="vertical"
                     reverse={false}
-                    duration={0.6}
+                    duration={0.1}
                     ease="easeOut"
                     initialOpacity={0}
                     animateOpacity
@@ -85,14 +85,14 @@ export function ServiceSection() {
                             distance={50}
                             direction="vertical"
                             reverse={false}
-                            duration={0.8}
+                            duration={0.3}
                             ease=""
                             initialOpacity={0}
                             animateOpacity
                             scale={1}
                             threshold={0.1}
                             key={c.title}
-                            delay={0.15 + index * 0.17}
+                            delay={0.1 + index * 0.1}
                         >
                             <div className="h-[450px] bg-transparent hover:scale-103 hover:shadow-2xl hover:shadow-white/10 transition-transform duration-400 rounded-2xl ">
                                 <div className="flex flex-col h-full">

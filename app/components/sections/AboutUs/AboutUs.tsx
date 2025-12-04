@@ -16,7 +16,7 @@ export function AboutUs() {
             <div className=" w-full max-w-6xl mx-auto">
                 <FadeContent
                     blur={true}
-                    duration={0.6} 
+                    duration={0.5} 
                     ease="easeOut" 
                     initialOpacity={0}
                     delay={0}
@@ -30,10 +30,10 @@ export function AboutUs() {
                 <div className="px-4 sm:px-7 py-1 grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-8 md:gap-6 justify-between w-full backdrop-blur-xl rounded-none md:rounded-2xl">
                     <FadeContent
                         blur={true}
-                        duration={0.6}
+                        duration={0.5}
                         ease="easeOut"
                         initialOpacity={0}
-                        delay={0}
+                        delay={0.2}
                     >
                         <div className="-mb-3 md:hidden">
                             <span className="uppercase text-sm text-[#F0F0F0]/70">
@@ -73,10 +73,10 @@ export function AboutUs() {
                     </FadeContent>
                     <FadeContent
                         blur={true}
-                        duration={1.2}
+                        duration={0.5}
                         ease="easeOut"
                         initialOpacity={0}
-                        delay={0.7}
+                        delay={0.2}
                     >
                         <div className=" flex justify-center items-center w-full h-full order-1 md:order-2">
                             <div className="relative w-full max-w-md">
