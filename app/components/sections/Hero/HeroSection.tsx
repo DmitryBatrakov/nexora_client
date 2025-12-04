@@ -1,8 +1,7 @@
-import DecryptedText from "@/app/components/ui/DecryptedText/DecryptedText";
 import GradientText from "@/app/components/ui/GradientText/GradientText";
 import { BlueLightPoint } from "../../ui/BlueLightPoint/BlueLightPoint";
 import { PinkLightPoint } from "../../ui/PinkLightPoint/PinkLightPoint";
-import { CustomButton } from "../../ui/Button/Button";
+import AnimatedContent from "@/components/ui/AnimatedContent";
 
 export function Hero() {
     return (
@@ -22,39 +21,44 @@ export function Hero() {
             <div className="relative  flex h-full min-h-screen w-full flex-col z-10">
                 <main className="flex flex-1 items-center justify-center">
                     <div className="container mx-auto px-6 text-center">
-                        <div className="flex flex-col items-center gap-8 max-w-4xl mx-auto">
-                            <h1 className="text-5xl font-black leading-tight tracking-tighter text-[#F0F0F0] md:text-7xl">
-                                <span>Next-Level</span>
-                                <br />
-                                <GradientText
-                                    colors={[
-                                        "#00A2FF",
-                                        "#ff007A",
-                                        "#FF007A",
-                                        "#e22bab",
-                                    ]}
-                                    animationSpeed={0}
-                                    showBorder={false}
-                                >
-                                    <DecryptedText
-                                        text="Web Development"
-                                        speed={150}
-                                        maxIterations={11}
-                                        characters="ABCD!1@2#3$4%5"
-                                        className="font-black"
-                                        parentClassName="all-letters"
-                                        encryptedClassName="encrypted"
-                                        animateOn="view"                                   
-                                    />
-                                </GradientText>
-                                <span>for your business</span>
-                            </h1>
-                            <h2 className="max-w-2xl text-lg font-normal leading-relaxed text-[#F0F0F0]/70 md:text-xl">
-                                We build premium, fast, modern websites
-                                engineered for growth.
-                            </h2>
-                            {/* <CustomButton text="Start project" /> */}
-                        </div>
+                        <AnimatedContent
+                            distance={80}
+                            direction="vertical"
+                            reverse={false}
+                            duration={0.8}
+                            ease="easeOut"
+                            initialOpacity={0}
+                            animateOpacity
+                            scale={1}
+                            threshold={0.1}
+                            delay={0.1}
+                        >
+                            <div className="flex flex-col items-center gap-8 max-w-4xl mx-auto">
+                                <h1 className="text-5xl font-black leading-tight tracking-tighter text-[#F0F0F0] md:text-7xl">
+                                    <span>Next-Level</span>
+                                    <br />
+                                    <GradientText
+                                        colors={[
+                                            "#00A2FF",
+                                            "#ff007A",
+                                            "#FF007A",
+                                            "#e22bab",
+                                        ]}
+                                        animationSpeed={0}
+                                        showBorder={false}
+                                    >
+                                        <span className="font-bold">
+                                            Web Development
+                                        </span>
+                                    </GradientText>
+                                    <span>for your business</span>
+                                </h1>
+                                <h2 className="max-w-2xl text-lg font-normal leading-relaxed text-[#F0F0F0]/70 md:text-xl">
+                                    We build premium, fast, modern websites
+                                    engineered for growth.
+                                </h2>
+                            </div>
+                        </AnimatedContent>
                     </div>
                 </main>
             </div>
