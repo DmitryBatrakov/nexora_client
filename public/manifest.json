@@ -3,8 +3,8 @@
   "short_name": "Nexora",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#020318",
-  "theme_color": "#020318",
+  "background_color": "#121232",
+  "theme_color": "#121232",
   "icons": [
     {
       "src": "/icon-192.png",

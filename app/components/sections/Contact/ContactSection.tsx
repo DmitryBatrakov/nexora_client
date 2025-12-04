@@ -34,13 +34,13 @@ export function ContactSection() {
                     initialOpacity={0}
                     animateOpacity
                 >
-                    <div className="ml-5">
+                    <div className="ml-7 md:ml-8">
                         <span className="text-sm uppercase text-white/70">
                             Contact Us
                         </span>
                     </div>
                 </AnimatedContent>
-                <div className="backdrop-blur-3xl  rounded-2xl flex flex-col justify-between items-start px-6 py-6">
+                <div className="backdrop-blur-3xl rounded-2xl flex flex-col justify-between items-start px-6 py-2 md:py-6">
                     <AnimatedContent
                         direction="horizontal"
                         reverse={true} // ← слева
@@ -50,7 +50,7 @@ export function ContactSection() {
                         initialOpacity={0}
                         animateOpacity
                     >
-                        <div className="mb-3">
+                        <div className=" mb-3">
                             <span className="text-5xl font-bold text-white">
                                 Contact Us
                             </span>

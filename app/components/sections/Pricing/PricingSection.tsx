@@ -137,7 +137,7 @@ export function PricingSection() {
                                 animateOpacity
                                 scale={1}
                                 threshold={0.1}
-                                delay={0.5 + index * 0.2}
+                                delay={0 + index * 0.1}
                             >
                                 <div
                                     key={`${p.title}-${index}`}

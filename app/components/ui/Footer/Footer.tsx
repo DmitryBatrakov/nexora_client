@@ -9,7 +9,7 @@ export function Footer() {
             <div className="z-10 w-full max-w-7xl mx-auto p-5 flex flex-col items-center justify-center">
                 <div className=" gap-3 text-white flex">
                     <div className="size-7 flex">
-                        <Logo />
+                        <Logo color="white" />
                     </div>
                     <h2 className="text-[#F0F0F0] text-2xl font-bold leading-tight tracking-tight">
                         Nexora
