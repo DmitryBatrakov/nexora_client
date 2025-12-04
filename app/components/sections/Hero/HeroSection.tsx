@@ -42,7 +42,7 @@ export function Hero() {
                                     <DecryptedText
                                         text="Web Development"
                                         speed={150}
-                                        maxIterations={10}
+                                        maxIterations={11}
                                         characters="ABCD!1@2#3$4%5"
                                         className="font-black"
                                         parentClassName="all-letters"
