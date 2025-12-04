@@ -131,13 +131,13 @@ export function PricingSection() {
                                 distance={40}
                                 direction="vertical"
                                 reverse={false}
-                                duration={0.8}
+                                duration={0.3}
                                 ease="easeOut"
                                 initialOpacity={0}
                                 animateOpacity
                                 scale={1}
                                 threshold={0.1}
-                                delay={0 + index * 0.1}
+                                delay={0.1 + index * 0.1}
                             >
                                 <div
                                     key={`${p.title}-${index}`}
