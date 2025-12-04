@@ -16,8 +16,8 @@ export function AboutUs() {
             <div className=" w-full max-w-6xl mx-auto">
                 <FadeContent
                     blur={true}
-                    duration={1.1} // секунды
-                    ease="easeOut" // если это framer-motion
+                    duration={0.8} 
+                    ease="easeOut" 
                     initialOpacity={0}
                     delay={0}
                 >
@@ -30,10 +30,10 @@ export function AboutUs() {
                 <div className="px-4 sm:px-7 py-1 grid grid-cols-1 lg:grid-cols-[2fr_2fr] gap-8 md:gap-6 justify-between w-full backdrop-blur-xl rounded-none md:rounded-2xl">
                     <FadeContent
                         blur={true}
-                        duration={1}
+                        duration={0.8}
                         ease="easeOut"
                         initialOpacity={0}
-                        delay={0.1}
+                        delay={0}
                     >
                         <div className="-mb-3 md:hidden">
                             <span className="uppercase text-sm text-[#F0F0F0]/70">

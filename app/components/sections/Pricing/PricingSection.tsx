@@ -99,7 +99,7 @@ export function PricingSection() {
                     distance={40}
                     direction="vertical"
                     reverse={false}
-                    duration={0.8}
+                    duration={0.6}
                     ease="easeOut"
                     initialOpacity={0}
                     animateOpacity
