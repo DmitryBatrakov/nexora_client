@@ -1,10 +1,12 @@
 "use client";
 
 type ButtonProps = {
-    text: string
-}
+    text: string;
+    onClick?: () => void; 
+    disabled?: boolean;
+};
 
-export function CustomButton({ text }: ButtonProps) {
+export function CustomButton({ text, onClick, disabled }: ButtonProps) {
     return (
         <div className="relative group mt-4 inline-flex">
             <div className="absolute inset-[-2px] rounded-xl bg-gradient-to-r from-[#00A2FF] via-[#8A2BE2] to-[#FF007A] blur-[8px] opacity-50 transition-opacity duration-300 group-hover:opacity-80"></div>
@@ -13,6 +15,8 @@ export function CustomButton({ text }: ButtonProps) {
                    bg-gradient-to-r from-[#00A2FF] via-[#8A2BE2] to-[#FF007A]
                    text-white text-base font-bold leading-normal tracking-wider
                    transition duration-300 hover:shadow-2xl hover:shadow-[#8A2BE2]/40`}
+                   onClick={onClick}
+                   disabled={disabled}
             >
                 <span className="truncate">{text}</span>
             </button>

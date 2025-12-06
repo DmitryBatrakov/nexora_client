@@ -12,7 +12,7 @@ export function DesktopNav({ items }: DesktopNavProps) {
         <HeaderShell>
             <div className="flex items-center gap-3 text-white">
                 <div className="size-5">
-                    <Logo />
+                    <Logo color="white"/>
                 </div>
                 <h2 className="text-[#F0F0F0] text-xl font-bold leading-tight tracking-tight">
                     Nexora
