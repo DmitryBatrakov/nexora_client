@@ -1,35 +1,124 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { BlueLightPoint } from "../../ui/BlueLightPoint/BlueLightPoint";
 import { CustomInput } from "../../ui/Input/CustomInput";
 import ContactUsImage from "@/app/assets/contact-us/contactUs.png";
 import { CustomSelect } from "../../ui/Select/CustomSelect";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CustomButton } from "../../ui/Button/Button";
 import AnimatedContent from "@/components/ui/AnimatedContent";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { FieldError } from "../../ui/Error/FieldError";
 
-const categoryOptions = [
+import { FaExclamationCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
+import { OrbitProgress } from "react-loading-indicators";
+
+const CATEGORY_VALUES = ["landing", "website", "ecommerce"] as const;
+
+type CategoryValue = (typeof CATEGORY_VALUES)[number];
+
+const categoryOptions: { value: CategoryValue; label: string }[] = [
     { value: "landing", label: "Landing Page" },
     { value: "website", label: "Corporate Website" },
     { value: "ecommerce", label: "E-commerce Platform" },
 ];
 
+const formSchema = z.object({
+    name: z.string().min(2, "Name is too short").max(50, "Name is too long"),
+    email: z.string().email("Invalid email"),
+    phone: z.string().min(7, "Phone is too short").max(30, "Phone is too long"),
+    message: z.string().max(1000, "Message is too long").optional(),
+    category: z.enum(CATEGORY_VALUES, {
+        error: "Please select project type",
+    }),
+});
+
+type ContactFormValues = z.infer<typeof formSchema>;
+
 export function ContactSection() {
-    const [category, setCategory] = useState<string | undefined>(undefined);
+    const [submitSuccess, setSubmitSuccess] = useState<boolean>(false);
+    const [submitError, setSubmitError] = useState<boolean>(false);
+    const [submitLoading, setSubmitLoading] = useState<boolean>(false);
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        setValue,
+        watch,
+        reset
+    } = useForm<ContactFormValues>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+        },
+    });
+
+    const onValidSubmit = async (data: ContactFormValues) => {
+        try {
+            setSubmitLoading(true);
+            setSubmitSuccess(false);
+            setSubmitError(false);
+            const res = await fetch(
+                `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                }
+            );
+
+            if (res.ok) {
+                setSubmitSuccess(true);
+                 reset({
+                     name: "",
+                     email: "",
+                     phone: "",
+                     message: "",
+                     category: undefined, // сбрасываем селект
+                 });
+            } else {
+                setSubmitError(true);
+            }
+        } catch {
+            setSubmitLoading(false);
+        } finally {
+            setSubmitLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        if (!submitSuccess && !submitError) return;
+
+        const timer = setTimeout(() => {
+            setSubmitSuccess(false);
+            setSubmitError(false);
+        }, 1500); 
+
+        return () => clearTimeout(timer);
+    }, [submitSuccess, submitError]);
+
+    const category = watch("category");
 
     return (
         <section
             id="contact"
             className="relative min-h-[60vh] w-full flex justify-center items-center z-10 py-5 my-5 sm:my-15 scroll-mt-24"
         >
-            <div className=" w-full max-w-7xl mx-auto overflow-hidden">
+            <div className=" w-full max-w-7xl mx-auto overflow-hidden ">
                 <div className="absolute inset-0 z-0 opacity-100 hidden sm:block">
                     <BlueLightPoint top="25%" left="20%" />
                 </div>
                 <AnimatedContent
                     direction="horizontal"
-                    reverse={true} // ← слева
+                    reverse={true}
                     distance={80}
                     duration={0.1}
                     ease="easeOut"
@@ -42,10 +131,38 @@ export function ContactSection() {
                         </span>
                     </div>
                 </AnimatedContent>
-                <div className="backdrop-blur-3xl rounded-2xl flex flex-col justify-between items-start px-6 py-2 md:py-6">
+                <div className="backdrop-blur-3xl rounded-2xl flex flex-col justify-between items-start px-6 py-2 md:py-6 relative">
+                    {(submitSuccess || submitError || submitLoading) && (
+                        <div className="absolute top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] bg-[#131323e0] border-2 border-white/40 rounded-xl flex justify-center items-center gap-2">
+                            {submitLoading ? (
+                                <>
+                                    <OrbitProgress color="white" size="small" />
+                                    <span className="text-white">Sending</span>
+                                </>
+                            ) : submitError ? (
+                                <>
+                                    <FaExclamationCircle
+                                        color="red"
+                                        size={25}
+                                    />
+                                    <span className="text-white">
+                                        Send Error
+                                    </span>
+                                </>
+                            ) : (
+                                <>
+                                    <FaCheckCircle color="green" size={25} />
+                                    <span className="text-white">
+                                        Send Successfully
+                                    </span>
+                                </>
+                            )}
+                        </div>
+                    )}
+
                     <AnimatedContent
                         direction="horizontal"
-                        reverse={true} // ← слева
+                        reverse={true}
                         distance={80}
                         duration={0.1}
                         ease="easeOut"
@@ -68,7 +185,10 @@ export function ContactSection() {
                             initialOpacity={0}
                             animateOpacity
                         >
-                            <div className="flex flex-col gap-5 justify-center">
+                            <form
+                                className="flex flex-col gap-5 justify-center"
+                                onSubmit={handleSubmit(onValidSubmit)}
+                            >
                                 <div>
                                     <p className="text-white ml-5 mb-1">
                                         Your Name
@@ -76,7 +196,9 @@ export function ContactSection() {
                                     <CustomInput
                                         placeholder="Your Name"
                                         type="text"
+                                        {...register("name")}
                                     />
+                                    <FieldError error={errors.name?.message} />
                                 </div>
                                 <div>
                                     <p className="text-white ml-5 mb-1">
@@ -85,7 +207,9 @@ export function ContactSection() {
                                     <CustomInput
                                         placeholder="example@gmail.com"
                                         type="email"
+                                        {...register("email")}
                                     />
+                                    <FieldError error={errors.email?.message} />
                                 </div>
                                 <div>
                                     <p className="text-white ml-5 mb-1">
@@ -93,8 +217,10 @@ export function ContactSection() {
                                     </p>
                                     <CustomInput
                                         placeholder="+972 000 00 00"
-                                        type="number"
+                                        type="tel"
+                                        {...register("phone")}
                                     />
+                                    <FieldError error={errors.phone?.message} />
                                 </div>
                                 <div className="relative">
                                     <p className="text-white ml-5 mb-1">
@@ -103,28 +229,46 @@ export function ContactSection() {
                                     <CustomSelect
                                         name="category"
                                         value={category}
-                                        onChange={setCategory}
-                                        placeholder="Select project type"
+                                        onChange={(val) =>
+                                            setValue(
+                                                "category",
+                                                val as CategoryValue,
+                                                {
+                                                    shouldDirty: true,
+                                                    shouldTouch: true,
+                                                    shouldValidate: true,
+                                                }
+                                            )
+                                        }
                                         options={categoryOptions}
-                                        className="px-5 py-6.5 rounded-xl bg-[#ffffff0d] border-none text-white/70 placeholder-white/40 focus:ring-2 focus:ring-white/80 focus:outline-none"
+                                        placeholder="Select project type"
+                                        className="px-5 py-6 rounded-xl bg-[#ffffff0d] border-none text-white/70 placeholder-white/40 focus:ring-2 focus:ring-white/80 focus:outline-none"
                                         contentClassName="bg-white/5 backdrop-blur-xl border-none  text-white/80 rounded-xl "
                                         itemClassName="cursor-pointer focus:bg-white/10 focus:text-white my-1 px-3 py-2"
                                     />
+                                    <FieldError error={errors.category?.message} />
                                 </div>
                                 <div>
                                     <p className="text-white ml-5 mb-1">
                                         Message
                                     </p>
                                     <textarea
+                                        {...register("message")}
                                         rows={4}
                                         placeholder="Write your message..."
                                         className="w-full px-5 py-4 rounded-xl bg-white/5 backdrop-blur-xl  text-white/70 placeholder-white/40 focus:ring-white/80 focus:ring-2 focus:outline-none resize-none"
                                     ></textarea>
+                                    <FieldError
+                                        error={errors.message?.message}
+                                    />
                                 </div>
                                 <div className="">
-                                    <CustomButton text="Send Message" />
+                                    <CustomButton
+                                        text="Send Message"
+                                        disabled={submitLoading}
+                                    />
                                 </div>
-                            </div>
+                            </form>
                         </AnimatedContent>
                         <AnimatedContent
                             direction="horizontal"

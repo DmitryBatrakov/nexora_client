@@ -39,6 +39,7 @@ export default function Home() {
             <ServiceSection />
             <AboutUs />
             <PricingSection />
+            {/* <ContactSection /> */}
             <ContactSection />
             <Footer />
         </div>
